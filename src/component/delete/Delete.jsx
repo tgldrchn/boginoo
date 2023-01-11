@@ -6,7 +6,7 @@ import Remove from "./Remove";
 const Delete = () => {
   const [user, setUser] = useState();
   const getUser = async () => {
-    const res = await instance.get("/");
+    const res = await instance.get("/boginoo");
     setUser(res.data.data);
   };
   useEffect(() => {

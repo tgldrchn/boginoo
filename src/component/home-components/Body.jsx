@@ -8,7 +8,7 @@ const Body = () => {
   const linkValue = useRef();
   const [data, setData] = useState();
   const shorten = async () => {
-    const res = await instance.post("/", {
+    const res = await instance.post("/urls", {
       url: linkValue.current.value,
     });
     setData(res.data.data);
