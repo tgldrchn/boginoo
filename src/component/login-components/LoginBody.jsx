@@ -1,36 +1,28 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { useState } from "react";
 import { instance } from "../../App";
 import { useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 
 const LoginBody = () => {
   const nameValue = useRef();
   const passValue = useRef();
-  const [data, setData] = useState([]);
-  const [jump, setJump] = useState("/login");
+  const navigate = useNavigate();
   const getData = async () => {
-    const res = await instance.get("/boginoo");
-    setData(res.data.data);
+    try {
+      const res = await instance.get("/boginoo", {
+        username: nameValue.current.value,
+        password: passValue.current.value,
+      });
+      console.log(res.data.data);
+      navigate(`/home/${res.data.data._id}`);
+    } catch (error) {
+      toast(error.data.data);
+    }
   };
-  const login = () => {
-    data.map((user, i) => {
-      if (
-        user.username === nameValue.current.value &&
-        user.password === passValue.current.value
-      ) {
-        setJump(`/${user._id}`);
-        toast("amjilttai nevterlee");
-      }
-      return i;
-    });
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
 
   return (
     <div className="login-body">
@@ -48,7 +40,7 @@ const LoginBody = () => {
         <div className="email">Нууц үг</div>
         <input
           ref={passValue}
-          type="email"
+          type="password"
           className="email-input"
           placeholder="нууц үгээ оруулна уу"
         />
@@ -60,11 +52,9 @@ const LoginBody = () => {
         </div>
         <div className="forget">Нууц үгээ мартсан</div>
       </div>
-      <Link to={jump}>
-        <button className="login-login" onClick={login}>
-          Нэвтрэх
-        </button>
-      </Link>
+      <button className="login-login" onClick={getData}>
+        Нэвтрэх
+      </button>
       <Link className="new-user" to="/signup">
         Шинэ хэрэглэгч бол энд дарна уу?
       </Link>

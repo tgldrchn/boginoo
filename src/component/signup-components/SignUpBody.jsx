@@ -1,6 +1,6 @@
 import { instance } from "../../App";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
@@ -9,7 +9,7 @@ const SignUpBody = () => {
   const usernameValue = useRef();
   const passwordValue = useRef();
   const passwordReValue = useRef();
-  const [jump, setJump] = useState("/signup");
+  const navigate = useNavigate();
 
   const createUser = async () => {
     if (passwordReValue.current.value === passwordValue.current.value) {
@@ -19,7 +19,7 @@ const SignUpBody = () => {
           password: passwordValue.current.value,
         });
         toast("амжилттай бүртгэгдлээ");
-        setJump(`/login`);
+        navigate(`/login`);
       } catch (error) {
         toast(error.response.data.data);
       }
@@ -58,11 +58,9 @@ const SignUpBody = () => {
           placeholder="нууц үгээ давтан оруулна уу"
         />
       </div>
-      <Link to={jump}>
-        <button className="login-signup" onClick={createUser}>
-          Бүртгүүлэх
-        </button>
-      </Link>
+      <button className="login-signup" onClick={createUser}>
+        Бүртгүүлэх
+      </button>
       <ToastContainer />
     </div>
   );

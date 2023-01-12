@@ -4,27 +4,28 @@ import { instance } from "../App";
 import { Link } from "react-router-dom";
 import Body from "./home-components/Body";
 import HeaderLogged from "./homeLogged-components/HeaderLogged";
+import Footer from "./home-components/Footer";
 
 const HomeLogged = () => {
-  const params = useParams();
+  const { userid } = useParams();
   const [historyData, setHistoryData] = useState([]);
   const [user, setData] = useState([]);
 
   const getLoggedData = async () => {
-    const res = await instance.get(`/boginoo/${params.id}`);
+    const res = await instance.get(`/boginoo/${userid}`);
     setData(res.data.data);
   };
 
   useEffect(() => {
     getLoggedData();
-  }, [params.id]);
+  }, [userid]);
 
   const history = async () => {
     const res = await instance.get("urls");
     setHistoryData(res.data.data);
   };
   return (
-    <div className="Home">
+    <div className="HomeLogged">
       {" "}
       <div className="header">
         <div className="header-title">ХЭРХЭН АЖИЛЛАХ ВЭ?</div>
@@ -50,6 +51,7 @@ const HomeLogged = () => {
         </div>
       </div>{" "}
       {historyData && <Body history={historyData} />}
+      <Footer />
     </div>
   );
 };
