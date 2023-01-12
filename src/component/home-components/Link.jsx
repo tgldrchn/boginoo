@@ -8,7 +8,7 @@ const Links = ({ link }) => {
       <div className="bogino">
         <div className="holboos">Богино холбоос:</div>
         <a className="link" href={link.url}>
-          {link.shortLink}
+          http://localhost:7000/{link.shortLink}
         </a>
       </div>
     </div>
