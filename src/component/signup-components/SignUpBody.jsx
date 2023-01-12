@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
-import Header from "../home-components/Header";
 
 const SignUpBody = () => {
   const usernameValue = useRef();
@@ -15,7 +14,7 @@ const SignUpBody = () => {
   const createUser = async () => {
     if (passwordReValue.current.value === passwordValue.current.value) {
       try {
-        const res = await instance.post("/boginoo", {
+        await instance.post("/boginoo", {
           username: usernameValue.current.value,
           password: passwordValue.current.value,
         });

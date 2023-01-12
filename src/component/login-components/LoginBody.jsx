@@ -1,27 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useRef } from "react";
 import { useState } from "react";
 import { instance } from "../../App";
 import { useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LoginBody = () => {
   const nameValue = useRef();
   const passValue = useRef();
   const [data, setData] = useState([]);
-
+  const [jump, setJump] = useState("/login");
   const getData = async () => {
     const res = await instance.get("/boginoo");
     setData(res.data.data);
   };
-
   const login = () => {
     data.map((user, i) => {
       if (
         user.username === nameValue.current.value &&
         user.password === passValue.current.value
       ) {
-        console.log(i);
+        setJump(`/${user._id}`);
+        toast("amjilttai nevterlee");
       }
+      return i;
     });
   };
 
@@ -57,12 +60,15 @@ const LoginBody = () => {
         </div>
         <div className="forget">Нууц үгээ мартсан</div>
       </div>
-      <button className="login-login" onClick={login}>
-        Нэвтрэх
-      </button>
+      <Link to={jump}>
+        <button className="login-login" onClick={login}>
+          Нэвтрэх
+        </button>
+      </Link>
       <Link className="new-user" to="/signup">
         Шинэ хэрэглэгч бол энд дарна уу?
       </Link>
+      <ToastContainer />
     </div>
   );
 };
