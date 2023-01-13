@@ -7,6 +7,7 @@ import Login from "./component/Login";
 import SignUp from "./component/SignUp";
 import HomeLogged from "./component/HomeLogged";
 import ShortLink from "./component/shortLink/shortLink";
+import Forget from "./component/Forget";
 export const instance = axios.create({
   baseURL: "http://localhost:7000",
   headers: {
@@ -18,11 +19,12 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/ustaga" element={<Delete />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/home/:userid" element={<HomeLogged />} />
       <Route path="/:id" element={<ShortLink />} />
+      <Route path="/forget" element={<Forget />} />{" "}
+      <Route path="/delete" element={<Delete />} />
     </Routes>
   );
 }

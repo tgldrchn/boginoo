@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { instance } from "../App";
 import { Link } from "react-router-dom";
 import Body from "./home-components/Body";
-import HeaderLogged from "./homeLogged-components/HeaderLogged";
 import Footer from "./home-components/Footer";
 
 const HomeLogged = () => {
@@ -28,9 +27,9 @@ const HomeLogged = () => {
     <div className="HomeLogged">
       {" "}
       <div className="header">
-        <div className="header-title">ХЭРХЭН АЖИЛЛАХ ВЭ?</div>
-        <Link to="/login" className="header-logged-container">
-          <div className="header-logged">{user.username}</div>
+        <div className="headerTitle">ХЭРХЭН АЖИЛЛАХ ВЭ?</div>
+        <Link to="/login" className="headerLoggedContainer">
+          <div className="headerLogged">{user.username}</div>
         </Link>
         <div className="icon">
           <svg
@@ -38,19 +37,18 @@ const HomeLogged = () => {
             width="16"
             height="16"
             fill="currentColor"
-            class="bi bi-chevron-down"
             viewBox="0 0 16 16"
-            className="icon-icon"
+            className="iconIcon"
             onClick={history}
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
             />
           </svg>
         </div>
       </div>{" "}
-      {historyData && <Body history={historyData} />}
+      {historyData && <Body historyValue={historyData} />}
       <Footer />
     </div>
   );

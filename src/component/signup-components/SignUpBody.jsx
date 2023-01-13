@@ -1,9 +1,8 @@
 import { instance } from "../../App";
 import { useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useState } from "react";
 
 const SignUpBody = () => {
   const usernameValue = useRef();
@@ -29,36 +28,36 @@ const SignUpBody = () => {
   };
 
   return (
-    <div className="login-body">
-      <div className="login-title">Бүртгүүлэх</div>
-      <div className="email-container">
+    <div className="loginBody">
+      <div className="loginTitle">Бүртгүүлэх</div>
+      <div className="emailContainer">
         <div className="email">Нэвтрэх нэр</div>
         <input
           ref={usernameValue}
           type="text"
-          className="email-input"
+          className="emailInput"
           placeholder="нэвтрэх нэрээ оруулна уу"
         />
       </div>
-      <div className="email-container">
+      <div className="emailContainer">
         <div className="email">Нууц үг</div>
         <input
           ref={passwordValue}
           type="password"
-          className="email-input"
+          className="emailInput"
           placeholder="нууц үгээ оруулна уу"
         />
       </div>
-      <div className="email-container">
+      <div className="emailContainer">
         <div className="email">Нууц үгээ давтана уу?</div>
         <input
           ref={passwordReValue}
           type="password"
-          className="email-input"
+          className="emailInput"
           placeholder="нууц үгээ давтан оруулна уу"
         />
       </div>
-      <button className="login-signup" onClick={createUser}>
+      <button className="loginSignup" onClick={createUser}>
         Бүртгүүлэх
       </button>
       <ToastContainer />

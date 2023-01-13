@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="header">
-      <div className="header-title">ХЭРХЭН АЖИЛЛАХ ВЭ?</div>
+      <div className="headerTitle">ХЭРХЭН АЖИЛЛАХ ВЭ?</div>
       <Link to="/login">
-        <button className="header-button">НЭВТРЭХ</button>
+        <button className="headerButton">НЭВТРЭХ</button>
       </Link>
     </div>
   );

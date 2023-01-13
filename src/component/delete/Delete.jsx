@@ -3,10 +3,12 @@ import { useState } from "react";
 import { instance } from "../../App";
 import Remove from "./Remove";
 
+// zuer ustgahad amar bolgoh geed hiisen
+
 const Delete = () => {
   const [user, setUser] = useState();
   const getUser = async () => {
-    const res = await instance.get("/urls");
+    const res = await instance.get("/boginoo");
     setUser(res.data.data);
   };
   useEffect(() => {
@@ -16,7 +18,7 @@ const Delete = () => {
     <div>
       {user &&
         user.map((user) => {
-          return <Remove de={user} />;
+          return <Remove ustgah={user} />;
         })}
     </div>
   );

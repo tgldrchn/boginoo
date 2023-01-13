@@ -12,9 +12,9 @@ const HeaderLogged = ({ user }) => {
   };
   return (
     <div className="header">
-      <div className="header-title">ХЭРХЭН АЖИЛЛАХ ВЭ?</div>
-      <Link to="/login" className="header-logged-container">
-        <div className="header-logged">{user.username}</div>
+      <div className="headerTitle">ХЭРХЭН АЖИЛЛАХ ВЭ?</div>
+      <Link to="/login" className="headerLoggedContainer">
+        <div className="headerLogged">{user.username}</div>
       </Link>
       <div className="icon">
         <svg
@@ -24,7 +24,7 @@ const HeaderLogged = ({ user }) => {
           fill="currentColor"
           class="bi bi-chevron-down"
           viewBox="0 0 16 16"
-          className="icon-icon"
+          className="iconIcon"
           onClick={history}
         >
           <path

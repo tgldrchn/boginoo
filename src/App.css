@@ -11,14 +11,14 @@
   justify-content: flex-end;
   flex-direction: row;
 }
-.header-title {
+.headerTitle {
   font-size: 20px;
   font-weight: 700;
   line-height: 23px;
   color: #02b589;
   margin: 50px;
 }
-.header-button {
+.headerButton {
   width: 183px;
   height: 44px;
   border-radius: 100px;
@@ -30,17 +30,20 @@
   margin: 50px;
   border: 1px solid #02b589;
 }
-.home-body {
-  height: 60vh;
+.homeBody {
+  height: auto;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.bodyInputContainer {
+  margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  }
-.body-input-container {
-  margin-top: 50px;
 }
-.body-input {
+.bodyInput {
   width: 581px;
   height: 44px;
   border-radius: 100px;
@@ -50,8 +53,9 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 23px;
+  color: black;
 }
-.body-button {
+.bodyButton {
   width: 192px;
   height: 44px;
   border-radius: 100px;
@@ -66,30 +70,32 @@
 .footer {
   height: 100px;
   width: 100vw;
-  position: absolute;
+  position: relative;
   bottom: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.footer-content {
+.footerContent {
   font-weight: 400;
   font-size: 16px;
   line-height: 18.38px;
 }
-.footer-text {
+.footerText {
   font-weight: 400;
   font-size: 16px;
   line-height: 18.38px;
   opacity: 20%;
 }
 .holboosnuud {
+  width: 42%;
   display: flex;
   flex-direction: column;
   margin-top: 50px;
   margin-left: 20px;
   row-gap: 30px;
+  padding-left: 10px;
 }
 .holboos {
   font-weight: 400;
@@ -98,10 +104,13 @@
   opacity: 0.5;
 }
 .link {
+  width: 50%;
   font-weight: 400;
   font-size: 20px;
   line-height: 23px;
   margin-top: 5px;
+  overflow-wrap: break-word;
+  padding-right: 20px;
 }
 .login {
   width: 100vw;
@@ -110,20 +119,20 @@
   justify-content: center;
   flex-direction: column;
 }
-.login-body {
+.loginBody {
   margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.login-title {
+.loginTitle {
   font-size: 32px;
   line-height: 37px;
   font-weight: 700;
   color: #02b589;
 }
-.email-input {
+.emailInput {
   width: 391px;
   height: 44px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.16);
@@ -134,7 +143,6 @@
   padding-left: 20px;
   border: 1px solid grey;
   color: black;
-  opacity: 0.2;
   box-sizing: border-box;
 }
 .email {
@@ -143,7 +151,7 @@
   line-height: 18.38px;
   margin: 20px;
 }
-.forget-pass {
+.forgetPass {
   width: 100%;
   display: flex;
   align-items: center;
@@ -151,7 +159,7 @@
   flex-direction: row;
   margin: 30px;
 }
-.remember-me {
+.rememberMe {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -163,7 +171,7 @@
   border: 1px solid #02b589;
   border-radius: 4px;
 }
-.remember-text {
+.rememberText {
   color: #02b589;
   font-size: 16px;
   font-weight: 400;
@@ -175,7 +183,7 @@
   line-height: 18px;
   text-decoration: underline;
 }
-.login-login {
+.loginLogin {
   width: 383px;
   height: 44px;
   border-radius: 100px;
@@ -187,7 +195,7 @@
   line-height: 23px;
   text-transform: uppercase;
 }
-.new-user {
+.newUser {
   margin: 20px;
   color: #02b589;
   font-size: 16px;
@@ -202,7 +210,7 @@
   justify-content: center;
   flex-direction: column;
 }
-.login-signup {
+.loginSignup {
   width: 383px;
   height: 44px;
   border-radius: 100px;
@@ -215,7 +223,7 @@
   text-transform: uppercase;
   margin-top: 40px;
 }
-.header-logged{
+.headerLogged {
   width: 200px;
   height: 44px;
   display: flex;
@@ -227,45 +235,72 @@
   text-decoration: none;
   text-transform: uppercase;
 }
-.header-logged-container{
+.headerLoggedContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   color: black;
 }
-.icon{
+.icon {
   width: 100px;
 }
-.icon-icon{
+.iconIcon {
   width: 30px;
   height: 30px;
 }
-.history{
+.history {
   width: 40vw;
   height: auto;
   display: flex;
   flex-direction: column;
 }
-.history-urls{
+.historyUrls {
   margin-top: 50px;
   padding-bottom: 20px;
   width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   border-bottom: 1px solid grey;
 }
-.history-url{
+.historyUrl {
   width: 50%;
   display: flex;
-  flex-direction: column  ;
+  flex-direction: column;
 }
-.history-shortlink{
+.historyShortlink {
   width: 50%;
   display: flex;
-  flex-direction: column  ;
+  flex-direction: column;
 }
-.HomeLogged{
+.HomeLogged {
   height: auto;
+}
+.copy {
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 400;
+  color: #02b589;
+  margin-left: 20px;
+}
+.copyContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.copyContainerTwo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.miniTitle {
+  margin-top: 20px;
+  width: 50%;
+}
+.forgetLogin {
+  margin-top: 30px;
+}
+.forgot {
+  margin-top: 50px;
 }

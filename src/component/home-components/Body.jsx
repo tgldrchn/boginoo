@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useRef } from "react";
 import { instance } from "../../App";
+import History from "./History";
 import Links from "./Link";
 import Logo from "./Logo";
 
-const Body = ({ history }) => {
+const Body = ({ historyValue }) => {
   const linkValue = useRef();
   const [data, setData] = useState();
   const shorten = async () => {
@@ -13,41 +14,27 @@ const Body = ({ history }) => {
     });
     setData(res.data.data);
   };
-  console.log(history);
 
   return (
-    <div className="home-body-container">
-      <div className="home-body">
+    <div className="homeBodyContainer">
+      <div className="homeBody">
         <Logo />
-        <div className="body-input-container">
+        <div className="bodyInputContainer">
           <input
             ref={linkValue}
             type="text"
-            className="body-input"
+            className="bodyInput"
             placeholder="https://www.web-huudas.mn"
           />
-          <button onClick={shorten} className="body-button">
+          <button onClick={shorten} className="bodyButton">
             БОГИНОСГОХ
           </button>
-          {data && <Links link={data} />}
         </div>
+        {data && <Links link={data} />}
         <div className="history">
-          {history &&
-            history.map((history) => {
-              return (
-                <div className="history-urls">
-                  <div className="history-url">
-                    <div className="holboos">Өгөгдсөн холбоос: </div>
-                    <div className="link">{history.url}</div>
-                  </div>
-                  <div className="history-shortlink">
-                    <div className="holboos">Богино холбоос: </div>{" "}
-                    <a className="link" href={history.url}>
-                      http://localhost:7000/{history.shortLink}
-                    </a>
-                  </div>
-                </div>
-              );
+          {historyValue &&
+            historyValue.map((el) => {
+              return <History historyList={el} />;
             })}
         </div>
       </div>

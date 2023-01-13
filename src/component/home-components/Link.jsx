@@ -1,4 +1,13 @@
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Links = ({ link }) => {
+  const copy = async () => {
+    await navigator.clipboard.writeText(
+      `http://localhost:3000/${link.shortLink}`
+    );
+    toast("Амжилттай хуулагдлаа");
+  };
   return (
     <div className="holboosnuud">
       <div className="ugugdsun">
@@ -7,10 +16,16 @@ const Links = ({ link }) => {
       </div>
       <div className="bogino">
         <div className="holboos">Богино холбоос:</div>
-        <a className="link" href={link.url}>
-          http://localhost:3000/{link.shortLink}
-        </a>
+        <div className="copyContainer">
+          <a className="link" href={link.url}>
+            http://localhost:3000/{link.shortLink}
+          </a>
+          <div className="copy" onClick={copy}>
+            Хуулж авах
+          </div>
+        </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

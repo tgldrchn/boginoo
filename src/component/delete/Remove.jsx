@@ -1,15 +1,17 @@
 import { instance } from "../../App";
 import { Link } from "react-router-dom";
 
-const Remove = ({ de }) => {
+const Remove = ({ ustgah }) => {
   const remove = async () => {
-    await instance.delete(`/urls/${de._id}`);
+    await instance.delete(`/boginoo/${ustgah._id}`);
   };
   return (
     <div>
-      <button onClick={remove}>{de.url}</button>
+      <button className="loginLogin" onClick={remove}>
+        {ustgah.username}
+      </button>
       <Link to="/">
-        <button>buts</button>
+        <button className="loginLogin">Буцах</button>
       </Link>
     </div>
   );
