@@ -4,15 +4,21 @@ import { instance } from "../../App";
 import History from "./History";
 import Links from "./Link";
 import Logo from "./Logo";
+import { ToastContainer, toast } from "react-toastify";
 
 const Body = ({ historyValue }) => {
   const linkValue = useRef();
   const [data, setData] = useState();
   const shorten = async () => {
-    const res = await instance.post("/urls", {
-      url: linkValue.current.value,
-    });
-    setData(res.data.data);
+    try {
+      const res = await instance.post("/urls", {
+        url: linkValue.current.value,
+        token: JSON.parse(localStorage.getItem("token")),
+      });
+      setData(res.data.data);
+    } catch (error) {
+      toast("нэвтэрч орно уу");
+    }
   };
 
   return (
@@ -38,6 +44,7 @@ const Body = ({ historyValue }) => {
             })}
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

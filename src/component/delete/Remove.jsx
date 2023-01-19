@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const Remove = ({ ustgah }) => {
   const remove = async () => {
-    await instance.delete(`/boginoo/${ustgah._id}`);
+    await instance.delete(`/urls/${ustgah._id}`);
   };
   return (
     <div>
       <button className="loginLogin" onClick={remove}>
-        {ustgah.username}
+        {ustgah.url}
       </button>
       <Link to="/">
         <button className="loginLogin">Буцах</button>

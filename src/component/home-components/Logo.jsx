@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 
 const Logo = () => {
+  const clearLocal = () => {
+    localStorage.removeItem("token");
+  };
   return (
-    <Link to="/">
+    <Link to="/" onClick={clearLocal}>
       <div className="logo">
         <svg
           width="184"
