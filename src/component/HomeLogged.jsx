@@ -20,8 +20,8 @@ const HomeLogged = () => {
   }, [userid]);
 
   const history = async () => {
-    const res = await instance.get("urls");
-    setHistoryData(res.data.data);
+    const res = await instance.get(`/boginoo/${userid}`);
+    setHistoryData(res.data.data.url);
   };
   return (
     <div className="HomeLogged">
@@ -48,7 +48,7 @@ const HomeLogged = () => {
           </svg>
         </div>
       </div>{" "}
-      {historyData && <Body historyValue={historyData} />}
+      <Body historyValue={historyData} />
       <Footer />
     </div>
   );

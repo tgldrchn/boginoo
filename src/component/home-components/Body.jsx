@@ -14,6 +14,7 @@ const Body = ({ historyValue }) => {
       const res = await instance.post("/urls", {
         url: linkValue.current.value,
         token: JSON.parse(localStorage.getItem("token")),
+        user_id: JSON.parse(localStorage.getItem("user_id")),
       });
       setData(res.data.data);
     } catch (error) {

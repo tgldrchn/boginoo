@@ -30,6 +30,7 @@ const LoginBody = () => {
         password: passValue.current.value,
       });
       localStorage.setItem("token", JSON.stringify(res.data.token));
+      localStorage.setItem("user_id", JSON.stringify(res.data.data._id));
       navigate(`/home/${res.data.data._id}`);
       if (toggled) {
         localStorage.setItem("save", JSON.stringify(res.data.data));
