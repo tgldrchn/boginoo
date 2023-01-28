@@ -34,7 +34,13 @@ const LoginBody = () => {
       localStorage.setItem("role", JSON.stringify(res.data.data.role));
       navigate(`/home/${res.data.data._id}`);
       if (toggled) {
-        localStorage.setItem("save", JSON.stringify(res.data.data));
+        localStorage.setItem(
+          "save",
+          JSON.stringify({
+            username: nameValue.current.value,
+            password: passValue.current.value,
+          })
+        );
       }
     } catch (error) {
       toast(error);
