@@ -31,6 +31,7 @@ const LoginBody = () => {
       });
       localStorage.setItem("token", JSON.stringify(res.data.token));
       localStorage.setItem("user_id", JSON.stringify(res.data.data._id));
+      localStorage.setItem("role", JSON.stringify(res.data.data.role));
       navigate(`/home/${res.data.data._id}`);
       if (toggled) {
         localStorage.setItem("save", JSON.stringify(res.data.data));

@@ -23,6 +23,7 @@ const HomeLogged = () => {
     const res = await instance.get(`/boginoo/${userid}`);
     setHistoryData(res.data.data.url);
   };
+
   return (
     <div className="HomeLogged">
       {" "}

@@ -2,7 +2,6 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 import Home from "./component/Home";
-import Delete from "./component/delete/Delete";
 import Login from "./component/Login";
 import SignUp from "./component/SignUp";
 import HomeLogged from "./component/HomeLogged";
@@ -24,7 +23,6 @@ function App() {
       <Route path="/home/:userid" element={<HomeLogged />} />
       <Route path="/:id" element={<ShortLink />} />
       <Route path="/forget" element={<Forget />} />{" "}
-      <Route path="/delete" element={<Delete />} />
     </Routes>
   );
 }
