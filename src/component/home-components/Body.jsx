@@ -43,6 +43,13 @@ const Body = ({ historyValue }) => {
             historyValue.map((el) => {
               return <History historyList={el} />;
             })}
+          {historyValue && (
+            <div className="pages">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((el) => {
+                return <button>{el}</button>;
+              })}
+            </div>
+          )}
         </div>
       </div>
       <ToastContainer />

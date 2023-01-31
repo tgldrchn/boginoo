@@ -22,7 +22,7 @@ function App() {
       <Route path="/signup" element={<SignUp />} />
       <Route path="/home/:userid" element={<HomeLogged />} />
       <Route path="/:id" element={<ShortLink />} />
-      <Route path="/forget" element={<Forget />} />{" "}
+      <Route path="/forget" element={<Forget />} />
     </Routes>
   );
 }

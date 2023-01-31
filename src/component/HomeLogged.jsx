@@ -20,8 +20,8 @@ const HomeLogged = () => {
   }, [userid]);
 
   const history = async () => {
-    const res = await instance.get(`/boginoo/${userid}`);
-    setHistoryData(res.data.data.url);
+    const res = await instance.get(`/history/${userid}?page=2&limit=2`);
+    setHistoryData(res.data.data.data);
   };
 
   return (
