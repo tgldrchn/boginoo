@@ -4,6 +4,7 @@ import { instance } from "../App";
 import { Link } from "react-router-dom";
 import Body from "./home-components/Body";
 import Footer from "./home-components/Footer";
+import React from "react";
 
 const HomeLogged = () => {
   const { userid } = useParams();
@@ -20,7 +21,7 @@ const HomeLogged = () => {
   }, [userid]);
 
   const history = async () => {
-    const res = await instance.get(`/history/${userid}?page=2&limit=2`);
+    const res = await instance.get(`/history/${userid}?page=1&limit=5`);
     setHistoryData(res.data.data.data);
   };
 

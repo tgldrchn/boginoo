@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { instance } from "../../App";
 import Body from "../home-components/Body";
+import React from "react";
 
 const HeaderLogged = ({ user }) => {
   const [historyData, setHistoryData] = useState([]);

@@ -5,6 +5,7 @@ import History from "./History";
 import Links from "./Link";
 import Logo from "./Logo";
 import { ToastContainer, toast } from "react-toastify";
+import React from "react";
 
 const Body = ({ historyValue }) => {
   const linkValue = useRef();
@@ -39,17 +40,10 @@ const Body = ({ historyValue }) => {
         </div>
         {data && <Links link={data} />}
         <div className="history">
-          {historyValue &&
-            historyValue.map((el) => {
+          {this.props &&
+            this.props.map((el) => {
               return <History historyList={el} />;
             })}
-          {historyValue && (
-            <div className="pages">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((el) => {
-                return <button>{el}</button>;
-              })}
-            </div>
-          )}
         </div>
       </div>
       <ToastContainer />

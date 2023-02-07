@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
 import { useState } from "react";
+import React from "react";
 
 const LoginBody = () => {
   const nameValue = useRef();

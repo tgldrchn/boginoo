@@ -2,6 +2,7 @@ import { instance } from "../../App";
 import { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import React from "react";
 
 const ForgetBody = () => {
   const usernameRef = useRef();

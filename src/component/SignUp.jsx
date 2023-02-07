@@ -2,6 +2,7 @@ import Footer from "./home-components/Footer";
 import Logo from "./home-components/Logo";
 import LoginHeader from "./login-components/LoginHeader";
 import SignUpBody from "./signup-components/SignUpBody";
+import React from "react";
 
 const SignUp = () => {
   return (

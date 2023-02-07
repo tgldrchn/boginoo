@@ -2,6 +2,7 @@ import Footer from "./home-components/Footer";
 import Logo from "./home-components/Logo";
 import LoginBody from "./login-components/LoginBody";
 import LoginHeader from "./login-components/LoginHeader";
+import React from "react";
 
 const Login = () => {
   return (

@@ -1,6 +1,7 @@
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { instance } from "../../App";
+import React from "react";
 
 const History = ({ historyList }) => {
   const copy = async () => {

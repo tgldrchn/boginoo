@@ -2,6 +2,7 @@ import ForgetBody from "./forget-components/ForgetBody";
 import Footer from "./home-components/Footer";
 import Logo from "./home-components/Logo";
 import LoginHeader from "./login-components/LoginHeader";
+import React from "react";
 
 const Forget = () => {
   return (
